@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid layout</title>
+    <style>
+        * {
+            padding:0;
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            color: aliceblue;
+        }
+
+        .pagina {
+          display: grid;
+          grid-template-areas: "h" "m" "c" "ca" "r";
+          row-gap:1px;
+        }
+
+        .cabecalho {
+          grid-area: h;
+          background-color:rgb(12, 114, 215);
+          display: flex;
+          flex-direction: column;
+          align-items:center;
+          text-align: center;
+        }
+
+        .titulo {
+          padding:10px;
+          text-shadow: 1px 1px 3px Oblack;
+        }
+
+        .Logo {
+          width: 72px;
+         } 
+
+         .menuPrincipal {
+          grid-area:m;
+          background-color: #f90;
+        }
+        .itensMenu{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        .itensMenu li {
+          list-style: none;
+        }
+
+        .itensMenu li a {
+          color: white;
+          text-decoration:none;
+        }
+        
+        .conteudo {
+          background-color:lightgrey;
+          color:black;
+          grid-area: c;
+        }
+
+        .conteudo_extra {
+          background-color:grey;
+          grid-area: ca;
+        }
+
+        .rodape {
+          background-color:green;
+          grid-area: r;
+        }
+        @media screen and (min-width:480px) {
+          .pagina{
+            grid-template-areas:"h h"
+                                "m m"
+                                "c ca"
+			                         	"r r";  
+          column-gap: 2px;
+          row-gap:2px;
+          grid-template-columns:2fr 1fr;  
+          }
+          
+        
+          .cabecalho{
+            flex-direction: row;
+          }
+          .titulo{
+            width:100%;
+          }
+        }
+        @media screen and (min-width:768px) {
+          .pagina{
+            grid-template-areas:"h h"
+                                "m c"
+                                "ca ca"
+			                           "r r";   
+  		       grid-template-columns: 1fr 4fr 2fr; 
+             row-gap: 3px;
+             column-gap: 3px; 
+          }
+          .itensMenu{
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+         
+      
+          </style>
+</head>      
+<body>
+    <main class="pagina">
+        
+        <header class="cabecalho">
+            <img class="logo"
+              src="........"
+              alt=LUAN "/>
+            <h1 class="titulo">BIOGRAFIA LUAN</h1>
+        </header>
+        <nav class="menuPrincipal">
+            <ul class="itensMenu">
+                <li><a href="">NOME: LUAN DA SILVA SOUZA</a></li> 
+                <li><a href="">IDADE : 19</a></li>
+                <li><a href="">CURSANDO: SISTEMAS PARA INTERNET</a></li>
+                <li><a href="">GÊNERO: MASCULINO</a></li>
+            </ul>
+        </nav>
+        <article class="conteudo"> Olá, meu nome é Luan da silva Souza.
+
+          Brasileiro
+          18 anos de idade
+          Ensino médio completo
+          cursando Sistemas para internet na IFTO- Palmas
+      
+              "Uma vida sem desafios não vale a pena ser vivida." Sócrates
+ 
+      
+        </article>
+        <aside class="conteudo_extra">Assuntos que está estudando atualmente:
+          Direito Constitucional, Direito Penal, Banco de Dados.
+        </aside>
+        <footer class="rodape">CONTATO: _luansouza10
+        </footer>
+    </main>
+</body>
+</html>
